@@ -94,7 +94,7 @@ func (c *buildCmd) AfterApply() error {
 
 	// NOTE(hasheddan): we currently only support fetching controller image from
 	// daemon, but may opt to support additional sources in the future.
-	c.fetch = daemonFetch
+	c.fetch = xpkgFetch("local_image.tar")
 
 	return nil
 }
